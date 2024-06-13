@@ -52,7 +52,7 @@ button{
     outline: none;
     padding: 16px 50px;
     background: #101010;
-    color: #fc0000;
+    color: #FF5945;
     font-weight: 500;
     font-size: 16px;
     cursor: pointer;
@@ -82,7 +82,7 @@ ul li::before{
 }
 
 ul li.checked{
-    color:#fc0000;
+    color:#FF5945;
     text-decoration: line-through;
 }
 
@@ -97,7 +97,7 @@ ul li span{
     width: 40px;
     height: 40px;
     font-size: 22px;
-    color:#fc0000;
+    color:#FF5945;
     line-height: 40px;
     text-align: center;
     border-radius: 50%;
