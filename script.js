@@ -1,6 +1,7 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 
+//Making sure you add a task.
 function addTask(){
     if(inputBox.value === ''){
         alert("You must add a task!");
@@ -14,4 +15,28 @@ function addTask(){
         li.appendChild(span);
     }
     inputBox.value = "";
+    saveData();
 }
+
+//checking the list
+listContainer.addEventListener("click", function(e){
+    if(e.target.tagName === "LI"){
+        e.target.classList.toggle("checked");
+        saveData();
+    }
+    else if(e.target.tagName === "SPAN"){
+        e.target.parentElement.remove();
+        saveData();
+    }
+
+}, false);
+
+//saving the list data on browser
+function saveData(){
+    localStorage.setItem("data", listContainer.innerHTML);
+}
+
+function showTask(){
+    listContainer.innerHTML = localStorage.getItem("data");
+}
+showTask();
